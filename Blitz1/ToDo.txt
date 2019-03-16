@@ -1,0 +1,88 @@
+﻿Общие:
+	+ критерии подсчета мест
+	+ открытие сохраненного: не считает
+	+ открытие сохраненного: форма ввода
+	+ сохранение/восстановление (см. ошибку при открытии сохраненного, Office 2007)
+***** Текст исключения *****
+Microsoft.VisualStudio.Tools.Applications.Runtime.ControlNotFoundException: Этот документ может работать не так, как ожидается, поскольку отсутствует указанный ниже элемент управления: Sheet1. Данные, использующие этот элемент управления, не будут автоматически отображены или обновлены, а дополнительные функциональные возможности будут недоступны. За помощью обратитесь к администратору или к автору данного документа. ---> System.Runtime.InteropServices.COMException: Не удалось включить программный доступ к системе проектов Microsoft Office Visual Basic для приложений. Если запущено приложение Microsoft Office Word или Microsoft Office Excel, это может быть причиной запрета на включение программного доступа. Выйдите из приложения Word или Excel перед тем, как открыть или создать проект.
+   в Microsoft.VisualStudio.Tools.Office.Runtime.Interop.IHostItemProvider.GetHostObject(String primaryType, String primaryCookie, IntPtr& hostObject)
+   в Microsoft.VisualStudio.Tools.Office.Runtime.DomainCreator.ExecuteCustomization.Microsoft.Office.Tools.IHostItemProvider.GetHostObject(Type primaryType, String primaryCookie)
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.GetObjects()
+   --- Конец трассировки внутреннего стека исключений ---
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.GetObjects()
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.GetPrimaryControl()
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.add_Change(DocEvents_ChangeEventHandler value)
+   в Microsoft.Office.Tools.Excel.WorksheetBase.add_Change(DocEvents_ChangeEventHandler value)
+   в Blitz1.WSTable.Sheet1_Startup(Object sender, EventArgs e)
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.OnStartup()
+   в Microsoft.Office.Tools.Excel.WorksheetImpl.WorksheetExtensionImpl.Microsoft.Office.Tools.EntryPoint.OnStartup()
+   в Microsoft.Office.Tools.Excel.WorksheetBase.OnStartup()
+   в Blitz1.WSTable.FinishInitialization()
+   в Microsoft.Office.Tools.Excel.WorksheetBase.Microsoft.Office.Tools.EntryPoint.FinishInitialization()
+   в Microsoft.VisualStudio.Tools.Office.Runtime.DomainCreator.ExecuteCustomization.ExecutePhase(ExecutionPhases executionPhases)
+   в Microsoft.VisualStudio.Tools.Office.Runtime.DomainCreator.ExecuteCustomization.Microsoft.VisualStudio.Tools.Office.Runtime.Interop.IExecuteCustomization2.ExecuteEntryPoints()
+
+   Решение:
+	   ======================================================
+	   https://social.msdn.microsoft.com/Forums/vstudio/en-US/623f1b60-fbf2-4d55-a7ff-9dad46912c6b/vsto-excel-2007-application-does-not-work-with-excel-2010?forum=vsto
+	   File > Excel options (or Options) > Trust Center > Trust Center Settings > Macro Settings
+	   There you should see 'Trust access to the VBA project object model' check box under 'Developer Macro Settings'. Check it and press ok.
+	   ======================================================
+
+Форма:
+	+ Копирование списка из WhatsApp
+	+ ввод списком
+	+ форматированный вывод в буфер обмена
+	+ ввод цены игры
+	+ Вставка Ctrl+V при редактировании имени
+	+ Меню "Изменить"
+	+ Если нет выделения, вставка в конец списка
+	+ Не всегда правильно перенумеровывается список
+	+ порядок табуляции
+	+ Удаление эмодзи-номеров при вставке списка
+	- фокус ввода
+
+Таблица:
+	+ количество игр: осталось из всего
+	+ выделение цветом закончивших
+	+ фиксация заголовков
+	+ ширина колонок со счетом поменьше
+	+ защита ячеек
+	+ защита от ввода нечисел
+	+ пересчет после группового копирования/удаления
+	+ редактирование имен в турнирной таблице
+	+ мерцание при перерисовке
+	- редактирование имен в итоговой таблице мест
+	- редактирование названий команд в турнирной таблице
+	- редактирование названий команд в итоговой таблице мест
+	- удаление/добавление в список на ходу
+	- восстановление кнопки "Копировать" после открытия сохраненного документа, если документ был сохранен с активной вкладкой "Места"
+
+
+Setup:
+	+ найти место, куда копируется шаблон
+	+ иконка setup в списке установленных
+	+ имя setup в списке установленных
+	+ ссылка справки, ссылка поддержки http://www.Sbpro.com
+	+ пререквизиты в сетап
+	+ update/repair с номером версии
+	+ add customization step - access denied
+	-/+ проверка наличия Office 2007+ - действительно не работает в ISLE
+		http://stackoverflow.com/questions/30944698/installshield-le-require-office-2007-or-greater-doesnt-work
+
+	- в свойствах "C:\Program Files\..." или "C:\Program Files (x86)\..." единым способом (файлы не переносятся)
+
+- режим "один на один":
+	+ количество игр (1...4)
+	+ заполнение сетки
+	+ количество игр
+
++ режим "команда на команду":
+	+ количество игр
+	+ заполнение сетки
+	+ места
+	+ Merge для второй таблицы выдает ошибку (Office 2007):
+***** Текст исключения *****
+System.Runtime.InteropServices.COMException (0x800A03EC): Исключение из HRESULT: 0x800A03EC
+   в System.RuntimeType.ForwardCallToInvokeMember(String memberName, BindingFlags flags, Object target, Int32[] aWrapperTypes, MessageData& msgData)
+   в Microsoft.Office.Interop.Excel.Range.Merge(Object Across)

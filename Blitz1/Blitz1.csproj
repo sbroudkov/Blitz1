@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>Blitz1</RootNamespace>
+    <AssemblyName>Blitz1</AssemblyName>
+    <VSTO_HostDocumentName>Blitz1.xltx</VSTO_HostDocumentName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <OfficeApplication>Excel</OfficeApplication>
+    <ProjectGuid>{9D501792-0B61-4C7E-9B38-7397B0A90EBA}</ProjectGuid>
+    <SolutionID>182ca5df-37a5-499a-89bb-b74036dd815e</SolutionID>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VSTO_EmbedTypeLibraryInAssembly>false</VSTO_EmbedTypeLibraryInAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\CClientData.cs" />
+    <Compile Include="Client\CColorConst.cs" />
+    <Compile Include="Client\CConvertor.cs" />
+    <Compile Include="Client\CViewConst.cs" />
+    <Compile Include="DataStructures\CCommonData.cs" />
+    <Compile Include="Client\CUtils.cs" />
+    <Compile Include="DataStructures\SGlobalState.cs" />
+    <Compile Include="DataStructures\SGroup.cs" />
+    <Compile Include="DataStructures\SMatch.cs" />
+    <Compile Include="DataStructures\SScoreUpdate.cs" />
+    <Compile Include="DataStructures\STeam.cs" />
+    <Compile Include="DataStructures\SParticipantTotalsForClient.cs" />
+    <Compile Include="DataStructures\STotalsForClient.cs" />
+    <Compile Include="DataStructures\STournament.cs" />
+    <Compile Include="Client\FControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\FControl.Designer.cs">
+      <DependentUpon>FControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\NativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataStructures\SParticipant.cs" />
+    <Compile Include="DataStructures\SParticipantTotals.cs" />
+    <Compile Include="Client\UCListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSTable.cs">
+      <DependentUpon>Blitz1.xltx</DependentUpon>
+    </Compile>
+    <Compile Include="WSTable.Designer.cs">
+      <DependentUpon>WSTable.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="WSPlaces.cs">
+      <DependentUpon>Blitz1.xltx</DependentUpon>
+    </Compile>
+    <Compile Include="WSPlaces.Designer.cs">
+      <DependentUpon>WSPlaces.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.cs">
+      <DependentUpon>Blitz1.xltx</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.Designer.cs">
+      <DependentUpon>ThisWorkbook.Designer.xml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ThisWorkbook.resx">
+      <DependentUpon>ThisWorkbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataStructures\DataScheme.cd" />
+    <None Include="Docs\images\Pic1.png" />
+    <None Include="Docs\images\Pic10.png" />
+    <None Include="Docs\images\Pic11.png" />
+    <None Include="Docs\images\Pic12.png" />
+    <None Include="Docs\images\Pic13.png" />
+    <None Include="Docs\images\Pic14.png" />
+    <None Include="Docs\images\Pic15.png" />
+    <None Include="Docs\images\Pic16.png" />
+    <None Include="Docs\images\Pic17.png" />
+    <None Include="Docs\images\Pic2.png" />
+    <None Include="Docs\images\Pic3.png" />
+    <None Include="Docs\images\Pic4.png" />
+    <None Include="Docs\images\Pic5.png" />
+    <None Include="Docs\images\Pic6.png" />
+    <None Include="Docs\images\Pic7.png" />
+    <None Include="Docs\images\Pic8.png" />
+    <None Include="Docs\images\Pic9.png" />
+    <None Include="Docs\index.html" />
+    <Content Include="Docs\images\Pic13.1.png" />
+    <Content Include="Docs\images\Pic14.1.png" />
+    <Content Include="Docs\images\Pic18.png" />
+    <Content Include="Docs\images\Pic19.png" />
+    <Content Include="Docs\images\Pic2.1.png" />
+    <Content Include="Docs\images\Pic20.png" />
+    <Content Include="Docs\images\Pic21.png" />
+    <Content Include="Docs\images\Pic22.png" />
+    <Content Include="Docs\images\Pic8.0.png" />
+    <Content Include="Docs\images\Pic8.1.1.png" />
+    <Content Include="Docs\images\Pic8.1.png" />
+    <Content Include="Docs\images\Pic8.2.1.png" />
+    <Content Include="Docs\images\Pic8.2.png" />
+    <Content Include="Docs\images\Pic8.3.1.png" />
+    <Content Include="Docs\images\Pic8.3.png" />
+    <Content Include="Docs\images\Pic9.1.png" />
+    <Content Include="Docs\css\style.css" />
+    <Content Include="Docs\images\XP10.png" />
+    <Content Include="Docs\images\XP11.png" />
+    <Content Include="Docs\images\XP12.png" />
+    <Content Include="Docs\images\XP6.png" />
+    <Content Include="Docs\images\XP7.png" />
+    <Content Include="Docs\images\XP8.png" />
+    <Content Include="Docs\images\XP9.png" />
+    <Content Include="Docs\jscript\script.js" />
+    <Content Include="Icons\Cancel_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Cut_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Double-J-Design-Ravenna-3d-Database-Table.ico" />
+    <Content Include="Icons\Paste_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\SelectAll_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\VSO_Copy_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\VSO_Edit_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\VSO_NewFile_16x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ToDo.txt" />
+    <EmbeddedResource Include="Client\FControl.resx">
+      <DependentUpon>FControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Blitz1.xltx" />
+    <None Include="Blitz1_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ThisWorkbook.Designer.xml">
+      <DependentUpon>ThisWorkbook.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WSTable.Designer.xml">
+      <DependentUpon>WSTable.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WSPlaces.Designer.xml">
+      <DependentUpon>WSPlaces.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Blitz1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>15997F82DB1F544C5CE598C071F2CE8B8D9835AD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Blitz1.xltx" HostPackage="{825100CF-0BA7-47EA-A084-DCF3308DAF74}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\Office14\Excel.exe" DebugInfoCommandLine="/t &quot;[$OUTPUT]Blitz1.xltx&quot;" />
+        <Host Name="Excel Document" Path=".\Blitz1.xltx" GeneratedCodeNamespace="Blitz1">
+          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+          <HostItem Name="Sheet2" Code="WSPlaces.cs" CanonicalName="Sheet2" DisplayName="Места" Blueprint="WSPlaces.Designer.xml" GeneratedCode="WSPlaces.Designer.cs" />
+          <HostItem Name="Sheet1" Code="WSTable.cs" CanonicalName="Sheet1" DisplayName="Таблица" Blueprint="WSTable.Designer.xml" GeneratedCode="WSTable.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!--
+    To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

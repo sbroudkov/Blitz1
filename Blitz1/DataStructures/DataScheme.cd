@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Blitz1.Server.SMatch">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="SMatch" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAQAAAAAAAAIAAAAAAAAAAAABAAIAAAA=</HashCode>
+      <FileName>DataStructures\SMatch.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="First" />
+      <Field Name="Second" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Blitz1.Server.SParticipant">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <Members>
+      <Method Name="SParticipant" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAAAAAQAAAEAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\SParticipant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Team" />
+      <Field Name="Totals" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Blitz1.Server.SParticipantTotals">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAgAAAAABAAAABQAAAAAAgAGCAAAAAAAA=</HashCode>
+      <FileName>DataStructures\SParticipantTotals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blitz1.Server.SGroup">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="SGroup" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Matches" Type="Blitz1.Server.SMatch" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.469" Y="4.25" />
+        <Point X="1.469" Y="3.885" />
+        <Point X="2.61" Y="3.885" />
+        <Point X="2.61" Y="3.125" />
+        <Point X="3.25" Y="3.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>DataStructures\SGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Teams" />
+      <Field Name="Matches" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Blitz1.Server.STeam">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="STeam" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\STeam.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Participants" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Blitz1.Server.STournament">
+    <Position X="0.5" Y="1.5" Width="1.75" />
+    <Members>
+      <Method Name="STournament" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Groups" Type="Blitz1.Server.SGroup" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.938" Y="3.373" />
+        <Point X="0.938" Y="3.96" />
+        <Point X="0.938" Y="3.96" />
+        <Point X="0.938" Y="4.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAEAAAAACAAAAAQAAAAAQAAAAgAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\STournament.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Blitz1.Server.SGlobalState">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="SGlobalState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\SGlobalState.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Tournament" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
